@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUME : Seonmin Baek</title>
+    <!-- Use standard fonts for better Korean readability while keeping a system feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --win98-silver: #c0c0c0;
+            --win98-white: #ffffff;
+            --win98-dark-gray: #808080;
+            --win98-black: #000000;
+            --win98-navy: #000080;
+            --mac-platinum: #dfdfdf;
+            --sidebar-gray: #e0e0e0;
+            --border-color: #333;
+            --font-kr: 'Noto Sans KR', sans-serif;
+            --font-en: 'VT323', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--mac-platinum);
+            background-image: linear-gradient(#ccc 1px, transparent 1px);
+            background-size: 100% 3px;
+            font-family: var(--font-kr);
+            color: var(--win98-black);
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        /* Top Action Bar (Hidden on Print) */
+        .action-bar {
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            background: var(--win98-silver);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-gray) var(--win98-dark-gray) var(--win98-white);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .view-counter {
+            font-family: var(--font-en);
+            font-size: 18px;
+            color: var(--win98-navy);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 5px 15px;
+            background: var(--win98-silver);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-gray) var(--win98-dark-gray) var(--win98-white);
+            font-family: var(--font-kr);
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: inset 1px 1px var(--win98-white);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn:active {
+            border-color: var(--win98-dark-gray) var(--win98-white) var(--win98-white) var(--win98-dark-gray);
+            box-shadow: inset -1px -1px var(--win98-white);
+            padding: 6px 14px 4px 16px;
+        }
+
+        /* Main Document Container */
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--win98-white);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-gray) var(--win98-dark-gray) var(--win98-white);
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px dashed var(--win98-dark-gray);
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--win98-black);
+            margin-bottom: 10px;
+        }
+
+        /* Section Layout based on image.png */
+        .section {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed var(--win98-dark-gray);
+            padding-bottom: 30px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            width: 180px;
+            flex-shrink: 0;
+            background-color: var(--sidebar-gray);
+            padding: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            align-items: flex-start;
+            border-right: 2px solid var(--win98-dark-gray);
+        }
+
+        .section-content {
+            flex-grow: 1;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        .profile-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .profile-table td {
+            padding: 5px 0;
+        }
+
+        .profile-table td:first-child {
+            font-weight: bold;
+            width: 80px;
+        }
+
+        .list-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--win98-black);
+        }
+
+        .exp-header {
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid var(--win98-dark-gray);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .exp-subheader {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .exp-meta {
+            color: #555;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .project-block {
+            margin-bottom: 25px;
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 15px;
+            background: #f0f0f0;
+            padding: 5px;
+            border-left: 4px solid var(--win98-dark-gray);
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+            }
+
+            .section-title {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid var(--win98-dark-gray);
+                margin-bottom: 15px;
+            }
+
+            .section-content {
+                padding-left: 0;
+            }
+        }
+
+        /* Print Styles - crucial for PDF download matching the layout */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                color: black;
+                font-size: 12px;
+                /* Slightly smaller for print */
+            }
+
+            .action-bar {
+                display: none !important;
+            }
+
+            .page {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .section {
+                break-inside: avoid;
+                /* Prevent breaking sections across pages */
+                page-break-inside: avoid;
+            }
+
+            .project-block {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="action-bar">
+        <div class="view-counter">
+            <img src="https://win98icons.alexmeub.com/icons/png/msie1-0.png" width="24" alt="Internet Explorer Icon">
+            <span id="view-count-text">LOADING VIEWS...</span>
+        </div>
+        <button class="btn" onclick="window.print()">
+            <img src="https://win98icons.alexmeub.com/icons/png/print_printer-0.png" width="16" alt="Print Icon">
+            Download PDF
+        </button>
+    </div>
+
+    <div class="page" id="resume-container">
+        <!-- Content will be dynamically loaded here by fetchResumeData() -->
+        <h2 style="text-align:center; padding: 40px;">Loading Resume Data...</h2>
+    </div>
+
+    <script>
+        // Use a generic fetch method to get real resume data
+        async function fetchResumeData() {
+            try {
+                const response = await fetch('/api/resume');
+                if (response.ok) {
+                    const data = await response.json();
+                    renderResume(data);
+                } else {
+                    document.getElementById('resume-container').innerHTML = '<h2 style="color:red; text-align:center; padding: 40px;">Failed to load resume data.</h2>';
+                }
+            } catch (error) {
+                console.error("Failed to fetch resume data:", error);
+                document.getElementById('resume-container').innerHTML = '<h2 style="color:red; text-align:center; padding: 40px;">Server Offline. Please start the backend.</h2>';
+            }
+        }
+
+        function renderResume(data) {
+            const container = document.getElementById('resume-container');
+
+            // Build the HTML template
+            let html = `
+                <div class="header">
+                    <h1>RESUME : ${data.profile.name}</h1>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Profile</div>
+                    <div class="section-content">
+                        <table class="profile-table">
+                            <tr><td>성 명 :</td><td>${data.profile.name}</td></tr>
+                            <tr><td>연 락 처 :</td><td>${data.profile.phone}</td></tr>
+                            <tr><td>이 메 일 :</td><td>${data.profile.email}</td></tr>
+                            <tr><td>GitHub :</td><td><a href="${data.profile.github}" target="_blank">${data.profile.github}</a></td></tr>
+                        </table>
+                        <p style="margin-top: 20px; line-height: 1.6;">
+                            <strong>"${data.profile.intro_quote}"</strong><br><br>
+                            ${data.profile.bio_text}
+                        </p>
+                    </div>
+                </div>
+            `;
+
+            // Skills Section
+            if (data.skills && data.skills.length > 0) {
+                let skillsHtml = `
+                <div class="section">
+                    <div class="section-title">Technical<br>Skills</div>
+                    <div class="section-content">
+                `;
+                data.skills.forEach(skill => {
+                    skillsHtml += `<span class="list-title">${skill.category}</span><ul>`;
+                    skill.items.forEach(item => {
+                        skillsHtml += `<li>${item}</li>`;
+                    });
+                    skillsHtml += `</ul>`;
+                });
+                skillsHtml += `</div></div>`;
+                html += skillsHtml;
+            }
+
+            // Experience Section
+            if (data.experiences && data.experiences.length > 0) {
+                let expHtml = `
+                <div class="section">
+                    <div class="section-title">Work<br>Experience</div>
+                    <div class="section-content">
+                `;
+                data.experiences.forEach(exp => {
+                    expHtml += `
+                        <div class="exp-header">${exp.company} - ${exp.department}</div>
+                        <div class="exp-meta">${exp.role} | ${exp.duration}</div>
+                        <ul>
+                    `;
+                    exp.details.forEach(detail => {
+                        expHtml += `<li>${detail}</li>`;
+                    });
+                    expHtml += `</ul>`;
+                });
+                expHtml += `</div></div>`;
+                html += expHtml;
+            }
+
+            // Projects Section
+            if (data.projects && data.projects.length > 0) {
+                let projHtml = `
+                <div class="section">
+                    <div class="section-title">Projects</div>
+                    <div class="section-content">
+                `;
+                data.projects.forEach(proj => {
+                    projHtml += `
+                        <div class="project-block">
+                            <div class="project-title">${proj.title}</div>
+                    `;
+                    if (proj.context) projHtml += `<p><strong>상황/역할:</strong> ${proj.context}</p>`;
+                    if (proj.goal) projHtml += `<p><strong>목표:</strong> ${proj.goal}</p>`;
+
+                    if (proj.process && proj.process.length > 0) {
+                        projHtml += `<p><strong>진행과정:</strong></p><ul>`;
+                        proj.process.forEach(p => projHtml += `<li>${p}</li>`);
+                        projHtml += `</ul>`;
+                    }
+                    if (proj.outcome && proj.outcome.length > 0) {
+                        projHtml += `<p><strong>성과:</strong></p><ul>`;
+                        proj.outcome.forEach(o => projHtml += `<li>${o}</li>`);
+                        projHtml += `</ul>`;
+                    }
+                    if (proj.tech_stack) projHtml += `<p><strong>언어/Tool:</strong> ${proj.tech_stack}</p>`;
+
+                    projHtml += `</div>`;
+                });
+                projHtml += `</div></div>`;
+                html += projHtml;
+            }
+
+            // Education Section
+            if (data.educations && data.educations.length > 0) {
+                let eduHtml = `
+                <div class="section">
+                    <div class="section-title">Education<br>&<br>Certificates</div>
+                    <div class="section-content">
+                `;
+                data.educations.forEach(edu => {
+                    eduHtml += `<span class="exp-subheader">${edu.category}</span><ul>`;
+                    edu.items.forEach(item => {
+                        eduHtml += `<li>${item}</li>`;
+                    });
+                    eduHtml += `</ul><br>`;
+                });
+                eduHtml += `</div></div>`;
+                html += eduHtml;
+            }
+
+            container.innerHTML = html;
+        }
+
+        // API Call to fetch and increment view count
+        async function incrementViewCount() {
+            const counterText = document.getElementById('view-count-text');
+            try {
+                const response = await fetch('/api/views', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    counterText.innerText = \`TOTAL VIEWS: \${data.view_count}\`;
+                } else {
+                    counterText.innerText = "VIEWS: ERROR";
+                }
+            } catch (error) {
+                console.error("Failed to fetch view count:", error);
+                counterText.innerText = "VIEWS: OFFLINE";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            incrementViewCount();
+            fetchResumeData();
+        });
+    </script>
+</body>
+
+</html>
