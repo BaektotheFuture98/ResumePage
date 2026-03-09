@@ -27,6 +27,7 @@ class Profile(Base):
     address = Column(Text)
     short_bio = Column(Text)
     photo_url = Column(Text)
+    photo_base64 = Column(Text, nullable=True)  # base64-encoded image data
     created_at = Column(Text, default=lambda: datetime.utcnow().isoformat())
     updated_at = Column(Text, default=lambda: datetime.utcnow().isoformat())
     deleted_at = Column(Text, nullable=True)
@@ -104,7 +105,6 @@ class Skill(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(Text, nullable=False)
     category = Column(Text, nullable=False)
-    proficiency = Column(Text)
     display_order = Column(Integer, default=0)
     created_at = Column(Text, default=lambda: datetime.utcnow().isoformat())
     updated_at = Column(Text, default=lambda: datetime.utcnow().isoformat())

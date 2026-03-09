@@ -36,7 +36,6 @@ class EducationResponse(BaseModel):
 class SkillResponse(BaseModel):
     name: str
     category: str
-    proficiency: Optional[str]
 
     class Config:
         from_attributes = True

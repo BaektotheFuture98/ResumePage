@@ -1,0 +1,8 @@
+{
+    "python.defaultInterpreterPath": "/Users/seonminbaek/antigravity/ResumePage/.venv/bin/python",
+    "python.terminal.activateEnvInSelectedTerminal": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ]
+}
